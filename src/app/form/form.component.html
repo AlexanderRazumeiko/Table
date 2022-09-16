@@ -1,0 +1,21 @@
+<div class = "wrapper">
+    <div class = "container" >
+        
+     <a *ngFor = "let filter of DataFilters; index as id" class = "opt" [ngClass]="{'opt-active': id === tabId}" 
+        [routerLink] = "['/navigator']" 
+        [queryParams] = "{tab: id}">
+        <div >{{filter}}</div>
+     </a>
+    </div>
+    <div class = "table" >
+        <div class = "row" >
+            <div class = "row-key">Name</div>
+            <div class = "row-value">Acount</div>
+        </div>
+        <div class = "row" *ngFor = "let data of newData">
+            <div class = "row-key">{{data.name.first}} {{data.name.last}}</div>
+            <div class = "row-value">{{data.amount}}</div>
+        </div>
+    </div>
+    
+</div>
